@@ -30,8 +30,16 @@
     @apply text-white text-3xl cursor-pointer hover:text-seeturtle-300;
   }
 
+  .video-border-jess {
+    @apply border-[16px] rounded-3xl border-dark90 bg-dark90;
+  }
+
   .video-border {
     @apply border-[16px] border-b-[38px] rounded-3xl border-dark90 bg-dark90;
+  }
+
+  .link {
+    @apply text-seeturtle-300 hover:text-lightblue;
   }
 }
 

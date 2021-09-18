@@ -1,6 +1,7 @@
 import { FC } from "react";
 import Image from "next/image";
 import { BiVideo } from "react-icons/bi";
+import { Fade } from "react-awesome-reveal";
 
 const Landing: FC = ({ children }) => {
   return (
@@ -15,22 +16,28 @@ const Landing: FC = ({ children }) => {
           <p className="text-left text-white text-lg font-light mt-6">
             Our turtles eat microplastics so that real ones don't have to
           </p>
-          <a
-            className="text-seeturtle-800 text-2xl bg-gray-200 hover:grad-bg max-w-max font-black uppercase flex items-end px-5 py-3 rounded-xl mt-6 hover:bg-lightblue hover:text-white"
-            href="#video"
-          >
-            Watch live feed
-            <BiVideo className="text-3xl ml-2" />
-          </a>
+          <Fade direction="up" delay={500}>
+            <a
+              className="text-seeturtle-800 text-2xl bg-gray-200 hover:grad-bg max-w-max font-black uppercase flex items-end px-5 py-3 rounded-xl mt-6 hover:bg-lightblue hover:text-white"
+              href="#video"
+            >
+              Watch live feed
+              <BiVideo className="text-3xl ml-2" />
+            </a>
+          </Fade>
         </div>
         <div className="flex justify-center items-center h-full">
-          <Image
-            src="/icon.png"
-            alt="SeeTurtle Icon"
-            layout="fixed"
-            width={400}
-            height={400}
-          />
+          <div className="transform hover:scale-110 hover:-translate-y-16 transition-all">
+            <Fade direction="right">
+              <Image
+                src="/icon.png"
+                alt="SeeTurtle Icon"
+                layout="fixed"
+                width={400}
+                height={400}
+              />
+            </Fade>
+          </div>
         </div>
       </div>
     </div>

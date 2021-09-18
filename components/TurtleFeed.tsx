@@ -21,10 +21,10 @@ const TurtleFeed: FC<Props> = ({ embedId }) => {
           className="rounded-xl rounded-b-lg"
         />
         <div className="absolute w-full h-8 items-center top-[368px] flex">
-          <BiPlay className="text-white text-3xl cursor-pointer mr-2" />
-          <BsFillVolumeUpFill className="text-white text-3xl cursor-pointer" />
-          <FaCog className="text-white text-2xl cursor-pointer ml-auto" />
-          <BiFullscreen className="text-white text-3xl cursor-pointer ml-2" />
+          <BiPlay className="icon mr-2" />
+          <BsFillVolumeUpFill className="icon" />
+          <FaCog className="icon text-2xl ml-auto" />
+          <BiFullscreen className="icon ml-2" />
         </div>
       </div>
     </>
