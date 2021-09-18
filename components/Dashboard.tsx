@@ -1,4 +1,5 @@
 import { FC, useState } from "react";
+import CountUp from "react-countup";
 
 type Data = {
   date: string;
@@ -21,7 +22,13 @@ const Dashboard: FC = () => {
           Microplastics collected
         </h2>
         <h1 className="text-5xl font-semibold text-lightblue">
-          {selected.microplastic}g
+          <CountUp start={0} end={selected.microplastic} delay={0}>
+            {({ countUpRef }) => (
+              <div>
+                <span ref={countUpRef} />g
+              </div>
+            )}
+          </CountUp>
         </h1>
       </div>
 
