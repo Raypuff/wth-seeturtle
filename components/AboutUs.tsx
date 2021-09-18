@@ -4,10 +4,10 @@ import Image from "next/image";
 const AboutUs: FC = ({ children }) => {
   return (
     <div className="mx-8 overflow-hidden" id="aboutus">
-      <h1 className="text-6xl py-8 font-semibold text-center text-white">
+      <h1 className="text-6xl pt-8 py-4 font-semibold text-center text-white">
         Our Challenge
       </h1>
-      <p className="text-center text-white text-lg font-light mt-4 mb-16">
+      <p className="text-center text-white text-lg font-light mt-2 mb-16">
         Waste Management: Hidden Microplastic Crystals
       </p>
 
@@ -20,25 +20,51 @@ const AboutUs: FC = ({ children }) => {
               layout="fixed"
               width={400}
               height={400}
+              className="rounded-lg"
             />
           </div>
           <div className="flex flex-col justify-center h-full">
             <h1 className="text-white text-right text-5xl font-semibold">
-              <span className="font-semibold">A Real</span>
-              <br />
-              <span className="font-semibold">Problem</span>
+              <span className="font-semibold">A Real Problem</span>
             </h1>
 
             <div className="pl-10">
               <p className="text-right text-white text-lg font-light mt-6">
-                microplastic crystals with sizes down to microscopic is 
-                invisible to the naked eye and has been ingested by a wide
-                range of creatures in the marine wildlife community
+                <a
+                  href="https://oceanservice.noaa.gov/facts/microplastics.html#:~:text=Microplastics%20are%20small%20plastic%20pieces,our%20ocean%20and%20aquatic%20life.&text=Plastic%20debris%20can%20come%20in,)%20are%20called%20%E2%80%9Cmicroplastics.%E2%80%9D"
+                  className="link"
+                  target="blank"
+                  rel="noreferrer"
+                >
+                  Microplastic crystals
+                </a>{" "}
+                with sizes down to microscopic is invisible to the naked eye and
+                has been ingested by a wide range of creatures in the marine
+                wildlife community.
               </p>
               <p className="text-right text-white text-lg font-light mt-6">
-                According to the UN Environment Programme, 13 million tonnes of
-                plastic leak into our oceans every year, causing an estimated
-                $13 billion of economic damage to global marine ecosystems.
+                According to the{" "}
+                <a
+                  href="https://feature.undp.org/plastic-tidal-wave/#:~:text=Every%20year%2C%20up%20to%2013,minute%2C%20according%20to%20UN%20Environment.&text=Plastic%20is%20especially%20lethal%20to%20coral%20reef%20systems."
+                  target="blank"
+                  rel="noreferrer"
+                  className="link"
+                >
+                  UN Environment Programme
+                </a>
+                , 13 million tonnes of plastic leak into our oceans every year,
+                causing an estimated $13 billion of economic damage to global
+                marine ecosystems. Additionally, according to the{" "}
+                <a
+                  href="https://www.un.org/sustainabledevelopment/sustainable-consumption-production/"
+                  target="blank"
+                  rel="noreferrer"
+                  className="link"
+                >
+                  UN SDG12
+                </a>
+                , 5 trillion plastic bags are thrown away each year and many end
+                up in the oceans.
               </p>
             </div>
           </div>
