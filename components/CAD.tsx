@@ -1,5 +1,6 @@
 import { FC } from "react";
 import Image from "next/image";
+import { Fade, Rotate } from "react-awesome-reveal";
 
 const CAD: FC = ({ children }) => {
   return (
@@ -17,14 +18,16 @@ const CAD: FC = ({ children }) => {
       <br />
       <br />
       <div className="grid grid-cols-2 h-4/5">
-        <div className="flex justify-center items-center h-full">
-          <Image
-            src="/turtlewhite.png"
-            alt="Fish Icon"
-            layout="fixed"
-            width={400}
-            height={400}
-          />
+        <div className="flex justify-center items-center h-full transform hover:scale-110 transition-all">
+          <Fade direction="left">
+            <Image
+              src="/turtlewhite.png"
+              alt="Fish Icon"
+              layout="fixed"
+              width={400}
+              height={400}
+            />
+          </Fade>
         </div>
         <div className="flex flex-col justify-center h-full">
           <h1 className="text-white text-right text-5xl font-semibold">
@@ -57,15 +60,18 @@ const CAD: FC = ({ children }) => {
         <span className="text-center text-white text-lg font-light mt-6">
           State-of-the-art engineering with advanced functionalities.
         </span>
-        
-          <Image
-            src="/blownup.png"
-            alt="Fish Icon"
-            layout="fixed"
-            width={1000}
-            height={800}
-          />
+        <div className="transform hover:scale-110 transition-all">
+          <Fade direction="up">
+            <Image
+              src="/blownup.png"
+              alt="Fish Icon"
+              layout="fixed"
+              width={1000}
+              height={800}
+            />
+          </Fade>
         </div>
+      </div>
       <div className="flex flex-col justify-center h-full">
         <br />
         <h1 className="text-white text-center text-5xl font-semibold">
@@ -73,7 +79,7 @@ const CAD: FC = ({ children }) => {
           <span className="font-semibold">Connected wherever you go. </span>
         </h1>
         <span className="text-center text-white text-lg font-light mt-6">
-          SeeTurtles are connected and live streaming on our website. <br/>
+          SeeTurtles are connected and live streaming on our website. <br />
           You can see our SeeTurtles in action and track how much plastic waste
           has been removed.
         </span>

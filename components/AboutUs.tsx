@@ -25,7 +25,11 @@ const AboutUs: FC = ({ children }) => {
           </div>
           <div className="flex flex-col justify-center h-full">
             <h1 className="text-white text-right text-5xl font-semibold">
-              <span className="font-semibold">A Real Problem</span>
+              <span className="font-semibold">
+                A Real
+                <br />
+                Problem
+              </span>
             </h1>
 
             <div className="pl-10">
