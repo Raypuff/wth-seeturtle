@@ -2,10 +2,12 @@ import { FC, useState, useRef } from "react";
 import { useCollectionData } from "react-firebase-hooks/firestore";
 import { store } from "../firebase";
 import firebase from "firebase";
+import { Fade, AttentionSeeker } from "react-awesome-reveal";
 
 const Donate: FC = ({ children }) => {
   const [amount, setAmount] = useState<number | null>(null);
   const [nextPage, setNextPage] = useState(false);
+  const [error, setError] = useState(false);
   const nameRef = useRef<HTMLInputElement>(null);
 
   const donationsRef = store.collection("donations");
@@ -41,7 +43,7 @@ const Donate: FC = ({ children }) => {
             </p>
             <div className="grid grid-cols-2 grid-rows-2 gap-x-4 gap-y-4 mx-8 my-8">
               <button
-                className={` px-8 py-4 bg-gray-200 rounded-xl border-2 border-seeturtle-500 border-opacity-40
+                className={` px-8 py-4 bg-gray-200 rounded-xl border-2 border-seeturtle-500 border-opacity-40 transform hover:scale-110 transition-all
            ${
              amount === 5 ? "bg-seeturtle-700 text-white" : "text-seeturtle-800"
            }
@@ -51,7 +53,7 @@ const Donate: FC = ({ children }) => {
                 1 turtle
               </button>
               <button
-                className={` px-8 py-4 bg-gray-200 rounded-xl border-2 border-seeturtle-500 border-opacity-40
+                className={` px-8 py-4 bg-gray-200 rounded-xl border-2 border-seeturtle-500 border-opacity-40 transform hover:scale-110 transition-all
            ${
              amount === 10
                ? "bg-seeturtle-700 text-white"
@@ -64,7 +66,7 @@ const Donate: FC = ({ children }) => {
               </button>
 
               <button
-                className={` px-8 py-4 bg-gray-200 rounded-xl border-2 border-seeturtle-500 border-opacity-40
+                className={` px-8 py-4 bg-gray-200 rounded-xl border-2 border-seeturtle-500 border-opacity-40 transform hover:scale-110 transition-all
            ${
              amount === 25
                ? "bg-seeturtle-700 text-white"
@@ -77,7 +79,7 @@ const Donate: FC = ({ children }) => {
               </button>
 
               <button
-                className={` px-8 py-4 bg-gray-200 rounded-xl border-2 border-seeturtle-500 border-opacity-40
+                className={` px-8 py-4 bg-gray-200 rounded-xl border-2 border-seeturtle-500 border-opacity-40 transform hover:scale-110 transition-all
            ${
              amount === 50
                ? "bg-seeturtle-700 text-white"
@@ -89,20 +91,32 @@ const Donate: FC = ({ children }) => {
                 10 turtles
               </button>
             </div>
-            <div className="flex mx-8">
-              <button
-                className={`uppercase bg-gray-200 text-seeturtle-800 py-6 rounded-3xl w-full text-2xl font-black  ${
-                  amount && "hover:text-white hover:grad-bg"
-                }`}
-                onClick={() => {
-                  if (amount) {
-                    setNextPage(true);
-                  }
-                }}
-              >
-                Next
-              </button>
-            </div>
+
+            <AttentionSeeker effect="headShake">
+              <div className="flex mx-8">
+                <button
+                  className={`uppercase bg-gray-200 text-seeturtle-800 py-6 rounded-3xl w-full text-2xl font-black  ${
+                    amount && "hover:text-white hover:grad-bg"
+                  }`}
+                  onClick={() => {
+                    if (amount) {
+                      setNextPage(true);
+                      setError(false);
+                    } else {
+                      setError(true);
+                    }
+                  }}
+                >
+                  Next
+                </button>
+              </div>
+            </AttentionSeeker>
+            {error && (
+              <p className="mx-8 mt-4 font-light text-lg text-red-400">
+                Please select an amount to donate before clicking next!
+              </p>
+            )}
+
             <p className="mx-8 mt-4 font-light text-lg">
               Disclaimer: Our MVP does not process real donations (yet) so feel
               free to 'donate' to save the turtles!
@@ -145,19 +159,21 @@ const Donate: FC = ({ children }) => {
       <h2 className="mb-4 pt-8 pb-4 text-4xl font-semibold text-center text-white">
         Latest Donations
       </h2>
-      <div className="grid grid-cols-2 grid-rows-5 w-auto gap-x-16 gap-y-10 mr-4">
-        {donations &&
-          donations.map((donation) => {
-            return (
-              <div className="w-56 bg-white bg-opacity-70 h-8 flex items-center font-black uppercase text-seeturtle-800 pl-2 text-lg rounded-md">
-                {donation.displayName}
-                <div className="rounded-full ml-auto bg-white w-16 h-16 mr-[-32px] flex justify-center items-center text-xl font-black text-white grad-bg transform hover:scale-125 transition-all">
-                  ${donation.amount}
+      <Fade cascade={true} direction="up">
+        <div className="grid grid-cols-2 grid-rows-5 w-auto gap-x-16 gap-y-10 mr-4">
+          {donations &&
+            donations.map((donation) => {
+              return (
+                <div className="w-56 bg-white bg-opacity-70 h-8 flex items-center font-black uppercase text-seeturtle-800 pl-2 text-lg rounded-md">
+                  {donation.displayName}
+                  <div className="rounded-full ml-auto bg-white w-16 h-16 mr-[-32px] flex justify-center items-center text-xl font-black text-white grad-bg transform hover:scale-125 transition-all">
+                    ${donation.amount}
+                  </div>
                 </div>
-              </div>
-            );
-          })}
-      </div>
+              );
+            })}
+        </div>
+      </Fade>
     </div>
   );
 };
