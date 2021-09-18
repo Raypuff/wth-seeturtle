@@ -34,7 +34,7 @@ const Home: NextPage = () => {
         <GridContainer>
           <LeftGrid />
           <RightGrid>
-            <TurtleFeed embedId="2I6hDqCrI9o" />
+            <TurtleFeed embedId="2I6hDqCrI9o" turtleFeed={true} />
             <Chat />
           </RightGrid>
         </GridContainer>
@@ -42,7 +42,7 @@ const Home: NextPage = () => {
         <AboutUs />
         <How />
         <CAD />
-        <TurtleFeed embedId="xsBHRCuH2fM" />
+        <TurtleFeed embedId="2I6hDqCrI9o" />
       </Body>
     </>
   );
