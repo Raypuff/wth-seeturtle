@@ -98,8 +98,9 @@ function SendMessage() {
 function ChatRoom() {
   const messagesRef = store.collection("messages");
   const query = messagesRef.orderBy("createdAt").limit(25);
-
   const [messages] = useCollectionData(query, { idField: "id" });
+
+  console.log(messages);
 
   return (
     <div className="relative">

@@ -1,10 +1,17 @@
 import { FC, useState, useRef } from "react";
+import { useCollectionData } from "react-firebase-hooks/firestore";
 import { store } from "../firebase";
+import firebase from "firebase";
 
 const Donate: FC = ({ children }) => {
   const [amount, setAmount] = useState<number | null>(null);
   const [nextPage, setNextPage] = useState(false);
   const nameRef = useRef<HTMLInputElement>(null);
+  const donationsRef = store.collection("donations");
+  const query = donationsRef.orderBy("createdAt").limit(5);
+  const [donations] = useCollectionData(query);
+  console.log(donations);
+  
 
   const submitDonation = async (e: any) => {
     e.preventDefault();
@@ -14,6 +21,7 @@ const Donate: FC = ({ children }) => {
     await donationsRef.add({
       displayName: nameRef?.current?.value,
       amount: amount,
+      createdAt: firebase.firestore.FieldValue.serverTimestamp()
     });
   };
 
