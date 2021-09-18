@@ -12,7 +12,7 @@ const Chat: FC = ({ children }) => {
   return (
     <>
       <h1 className="text-3xl font-semibold text-white my-6">Chat</h1>
-      <div className="bg-dark90 rounded-t-3xl p-4 h-80 overflow-y-scroll relative mb-[-1px]">
+      <div className="bg-dark90 rounded-t-3xl p-4 h-80 relative mb-[-1px] overflow-y-scroll scrollbar scrollbar-thumb-seeturtle-600 scrollbar-track-seeturtle-300 hover:scrollbar-thumb-seeturtle-700 scrollbar-thin">
         <ChatRoom />
       </div>
       <SendMessage />

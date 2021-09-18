@@ -39,9 +39,7 @@ const Home: NextPage = () => {
           </RightGrid>
         </GridContainer>
         <Donate />
-        <AboutUs>
-          <p className="text-white text-lg">About Us</p>
-        </AboutUs>
+        <AboutUs />
         <How />
         <CAD></CAD>
       </Body>
