@@ -2,11 +2,12 @@ import { FC } from "react";
 
 const CAD: FC = ({ children }) => {
   return (
-    <div className="w-full" id="how">
+    <div className="w-full" id="CAD">
       {children}
-      <h1
-            className="text-left text-white text-lg font-light mt-5"
-          >3D Modelling</h1>
+      <br/>
+      <br/>
+      <h1 className="text-white text-center text-5xl font-semibold">
+          SeeTurtle 3D Model Design </h1>
     </div>
   );
 };

@@ -41,7 +41,7 @@ const Home: NextPage = () => {
         <Donate />
         <AboutUs />
         <How />
-        <CAD></CAD>
+        <CAD />
       </Body>
     </>
   );
