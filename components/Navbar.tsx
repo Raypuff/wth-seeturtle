@@ -17,7 +17,6 @@ const Navbar: FC = ({ children }) => {
             width={140}
           />
         </a>
-        <p className="text-white text-lg">Sign up</p>
         {children}
       </div>
       ;
