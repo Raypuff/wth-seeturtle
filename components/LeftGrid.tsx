@@ -45,4 +45,25 @@ const dummyData: Data[] = [
     distance: 93,
     temp: 3,
   },
+  {
+    date: "16 September 2021",
+    microplastic: 264,
+    trash: 92,
+    distance: 145,
+    temp: 12,
+  },
+  {
+    date: "15 September 2021",
+    microplastic: 5,
+    trash: 2,
+    distance: 915,
+    temp: 23,
+  },
+  {
+    date: "14 September 2021",
+    microplastic: 55,
+    trash: 72,
+    distance: 44,
+    temp: 17,
+  },
 ];

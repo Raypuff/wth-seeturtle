@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const AboutUs: FC = ({ children }) => {
   return (
-    <div className="mx-8" id="aboutus">
+    <div className="mx-8 overflow-hidden" id="aboutus">
       <h1 className="text-6xl py-8 font-semibold text-center text-white">
         Our Challenge
       </h1>

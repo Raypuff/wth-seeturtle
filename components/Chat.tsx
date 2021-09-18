@@ -2,7 +2,6 @@ import { FC, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useCollectionData } from "react-firebase-hooks/firestore";
 import Image from "next/image";
-
 import { auth, store } from "../firebase";
 import firebase from "firebase";
 
@@ -12,7 +11,7 @@ const Chat: FC = ({ children }) => {
   return (
     <>
       <h1 className="text-3xl font-semibold text-white my-6">Chat</h1>
-      <div className="bg-dark90 rounded-t-3xl p-4 h-80 overflow-y-scroll relative mb-[-1px]">
+      <div className="bg-dark90 rounded-t-3xl p-4 h-80 relative mb-[-1px] overflow-y-scroll scrollbar scrollbar-thumb-seeturtle-600 scrollbar-track-seeturtle-300 hover:scrollbar-thumb-seeturtle-700 scrollbar-thin">
         <ChatRoom />
       </div>
       <SendMessage />
@@ -97,10 +96,11 @@ function SendMessage() {
 
 function ChatRoom() {
   const messagesRef = store.collection("messages");
-  const query = messagesRef.orderBy("createdAt").limit(25);
-
+  const query = messagesRef.orderBy("createdAt", 'desc').limit(25);
   const [messages] = useCollectionData(query, { idField: "id" });
+  messages?.reverse();
 
+ 
   return (
     <div className="relative">
       <div className="">
