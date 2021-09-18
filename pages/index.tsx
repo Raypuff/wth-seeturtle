@@ -8,14 +8,13 @@ import Navbar from "../components/Navbar";
 import Landing from "../components/Landing";
 import GridContainer from "../components/GridContainer";
 import LeftGrid from "../components/LeftGrid";
-import Dashboard from "../components/Dashboard";
 import RightGrid from "../components/RightGrid";
 import TurtleFeed from "../components/TurtleFeed";
 import Chat from "../components/Chat";
 import Donate from "../components/Donate";
 import AboutUs from "../components/AboutUs";
 import How from "../components/How";
-import CAD from "../components/CAD"
+import CAD from "../components/CAD";
 
 const Home: NextPage = () => {
   return (
@@ -33,11 +32,10 @@ const Home: NextPage = () => {
         <Navbar />
         <Landing />
         <GridContainer>
-          <LeftGrid>
-            <Dashboard />
-          </LeftGrid>
+          <LeftGrid />
           <RightGrid>
             <TurtleFeed embedId="2I6hDqCrI9o" />
+            <Chat />
           </RightGrid>
         </GridContainer>
         <Donate />

@@ -1,9 +1,21 @@
 import { FC, useState, useRef } from "react";
+import { store } from "../firebase";
 
 const Donate: FC = ({ children }) => {
   const [amount, setAmount] = useState<number | null>(null);
   const [nextPage, setNextPage] = useState(false);
   const nameRef = useRef<HTMLInputElement>(null);
+
+  const submitDonation = async (e: any) => {
+    e.preventDefault();
+
+    const donationsRef = store.collection("donations");
+
+    await donationsRef.add({
+      displayName: nameRef?.current?.value,
+      amount: amount,
+    });
+  };
 
   return (
     <div
@@ -74,7 +86,9 @@ const Donate: FC = ({ children }) => {
             </div>
             <div className="flex mx-8">
               <button
-                className="uppercase bg-gray-200 text-seeturtle-800 py-6 rounded-3xl w-full text-2xl font-black hover:text-white hover:bg-lightblue"
+                className={`uppercase bg-gray-200 text-seeturtle-800 py-6 rounded-3xl w-full text-2xl font-black  ${
+                  amount && "hover:text-white hover:grad-bg"
+                }`}
                 onClick={() => {
                   if (amount) {
                     setNextPage(true);
@@ -97,11 +111,16 @@ const Donate: FC = ({ children }) => {
               className="py-2 px-1 border-2 border-seeturtle-800 border-opacity-40 text-xl mt-2 w-full"
             />
             <button
-              className="uppercase bg-lightblue mt-4 text-white py-6 rounded-3xl w-full text-2xl font-black hover:text-white hover:bg-seeturtle-800"
-              onClick={() => {
-                alert(`${nameRef?.current?.value} donated ${amount}`);
-                setNextPage(false);
-                setAmount(null);
+              className={`uppercase bg-lightblue mt-4 text-white py-6 rounded-3xl w-full text-2xl font-black hover:text-white ${
+                nameRef?.current?.value !== null && "hover:grad-bg"
+              }`}
+              onClick={(e) => {
+                if (nameRef?.current?.value) {
+                  alert(`${nameRef?.current?.value} donated ${amount}`);
+                  submitDonation(e);
+                  setNextPage(false);
+                  setAmount(null);
+                }
               }}
             >
               DONATE
