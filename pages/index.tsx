@@ -45,7 +45,7 @@ const Home: NextPage = () => {
           <p className="text-white text-lg">About Us</p>
         </AboutUs>
         <How />
-        <CAD></CAD>
+        <CAD />
       </Body>
     </>
   );
