@@ -7,16 +7,10 @@ const Donate: FC = ({ children }) => {
   const [amount, setAmount] = useState<number | null>(null);
   const [nextPage, setNextPage] = useState(false);
   const nameRef = useRef<HTMLInputElement>(null);
-  const donationsRef = store.collection("donations");
-  const query = donationsRef.orderBy("createdAt").limit(5);
-  const [donations] = useCollectionData(query);
-  console.log(donations);
-  
 
   const donationsRef = store.collection("donations");
-  const query = donationsRef.orderBy("createdAt").limit(10);
+  const query = donationsRef.orderBy("createdAt", "desc").limit(10);
   const [donations] = useCollectionData(query, { idField: "id" });
-  console.log(donations);
 
   const submitDonation = async (e: any) => {
     e.preventDefault();
@@ -24,7 +18,7 @@ const Donate: FC = ({ children }) => {
     await donationsRef.add({
       displayName: nameRef?.current?.value,
       amount: amount,
-      createdAt: firebase.firestore.FieldValue.serverTimestamp()
+      createdAt: firebase.firestore.FieldValue.serverTimestamp(),
     });
   };
 
@@ -151,13 +145,13 @@ const Donate: FC = ({ children }) => {
       <h2 className="mb-4 pt-8 pb-4 text-4xl font-semibold text-center text-white">
         Latest Donations
       </h2>
-      <div className="grid grid-cols-2 grid-rows-5 w-auto gap-x-16 gap-y-8">
+      <div className="grid grid-cols-2 grid-rows-5 w-auto gap-x-16 gap-y-10 mr-4">
         {donations &&
           donations.map((donation) => {
             return (
-              <div className=" w-56 bg-white bg-opacity-70 h-8 flex items-center font-black uppercase text-seeturtle-800 pl-2 text-lg rounded-md">
+              <div className="w-56 bg-white bg-opacity-70 h-8 flex items-center font-black uppercase text-seeturtle-800 pl-2 text-lg rounded-md">
                 {donation.displayName}
-                <div className="rounded-full ml-auto bg-white w-16 h-16 mr-[-32px] flex justify-center items-center text-xl font-black text-white grad-bg">
+                <div className="rounded-full ml-auto bg-white w-16 h-16 mr-[-32px] flex justify-center items-center text-xl font-black text-white grad-bg transform hover:scale-125 transition-all">
                   ${donation.amount}
                 </div>
               </div>
