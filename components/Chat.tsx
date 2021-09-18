@@ -2,7 +2,6 @@ import { FC, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useCollectionData } from "react-firebase-hooks/firestore";
 import Image from "next/image";
-
 import { auth, store } from "../firebase";
 import firebase from "firebase";
 
