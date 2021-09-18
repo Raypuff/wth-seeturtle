@@ -65,14 +65,6 @@ const AboutUs: FC = ({ children }) => {
           <br/>
           <br/>
         <br />
-        <h1 className="text-white text-center text-5xl font-semibold">
-          <span className="font-semibold">Threat to the sea community</span>
-        </h1>
-        <p className="text-right text-white text-lg font-light mt-6">
-          microplastic crystals with sizes of a grain of rice down to
-          microscopic are tiny and has been injested by wide range of creatures
-          in the marine wildlife community
-        </p>
       </div>
     </div>
   );
