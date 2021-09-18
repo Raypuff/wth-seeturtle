@@ -85,9 +85,18 @@ const AboutUs: FC = ({ children }) => {
         </h1>
         <br />
         <p className="text-center text-white text-lg font-light mt-6">
-          According to Nottingham University, many toxic chemicals can also
-          adhere to the surface of plastic. If ingested, contaminated
-          microplastics could expose organisms to high concentrations of toxins
+          According to{" "}
+          <a
+            href="https://www.nottingham.ac.uk/connectonline/research/2018/the-big-problem-of-microplastics.aspx"
+            className="link"
+            target="blank"
+            rel="noreferrer"
+          >
+            Nottingham University
+          </a>
+          , many toxic chemicals can also adhere to the surface of plastic. If
+          ingested, contaminated microplastics could expose organisms to high
+          concentrations of toxins.
         </p>
 
         <p className="text-center text-white text-lg font-light mt-6">

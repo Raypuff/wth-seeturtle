@@ -5,13 +5,18 @@ import { BsFillVolumeUpFill } from "react-icons/bs";
 import { FaCog } from "react-icons/fa";
 
 type Props = {
+  turtleFeed?: boolean;
   embedId?: string;
 };
 
-const TurtleFeed: FC<Props> = ({ embedId }) => {
+const TurtleFeed: FC<Props> = ({ embedId, turtleFeed }) => {
   return (
     <>
-      <div className="aspect-w-16 aspect-h-9 w-full video-border relative">
+      <div
+        className={`aspect-w-16 aspect-h-9 w-full ${
+          turtleFeed ? "video-border" : "video-border-jess"
+        } relative`}
+      >
         <iframe
           src={`https://www.youtube.com/embed/${embedId}`}
           frameBorder="0"
