@@ -42,9 +42,9 @@ const AboutUs: FC = ({ children }) => {
                 >
                   Microplastic crystals
                 </a>{" "}
-                with sizes down to microscopic is invisible to the naked eye and
-                has been ingested by a wide range of creatures in the marine
-                wildlife community.
+                are invisible to the naked eye. With sizes down to microscopic 
+                it has been ingested by a wide range of creatures in the marine
+                widlife community and is still doing invisible damage today
               </p>
               <p className="text-right text-white text-lg font-light mt-6">
                 According to the{" "}
