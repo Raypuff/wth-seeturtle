@@ -31,9 +31,9 @@ const AboutUs: FC = ({ children }) => {
 
             <div className="pl-10">
               <p className="text-right text-white text-lg font-light mt-6">
-                Microplastic crystals with sizes of a grain of rice down to
-                microscopic are tiny and has been injested by wide range of
-                creatures in the marine wildlife community
+                microplastic crystals with sizes down to microscopic is 
+                invisible to the naked eye and has been ingested by a wide
+                range of creatures in the marine wildlife community
               </p>
               <p className="text-right text-white text-lg font-light mt-6">
                 According to the UN Environment Programme, 13 million tonnes of
