@@ -1,9 +1,21 @@
 import { FC, useState, useRef } from "react";
+import { store } from "../firebase";
 
 const Donate: FC = ({ children }) => {
   const [amount, setAmount] = useState<number | null>(null);
   const [nextPage, setNextPage] = useState(false);
   const nameRef = useRef<HTMLInputElement>(null);
+
+  const submitDonation = async(e: any) => {
+    e.preventDefault();
+
+    const donationsRef = store.collection('donations');
+
+    await donationsRef.add({
+      displayName: nameRef?.current?.value,
+      amount: amount 
+    }) 
+  }
 
   return (
     <div
@@ -98,8 +110,9 @@ const Donate: FC = ({ children }) => {
             />
             <button
               className="uppercase bg-lightblue mt-4 text-white py-6 rounded-3xl w-full text-2xl font-black hover:text-white hover:bg-seeturtle-800"
-              onClick={() => {
+              onClick={(e) => {
                 alert(`${nameRef?.current?.value} donated ${amount}`);
+                submitDonation(e);
                 setNextPage(false);
                 setAmount(null);
               }}

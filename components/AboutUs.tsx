@@ -50,15 +50,21 @@ const AboutUs: FC = ({ children }) => {
         <br />
       </div>
       <div>
+
+        <br/>
+        <br/>
+      <h1 className="text-white text-center text-5xl font-semibold">
+            <span className="font-semibold">Threat to the ocean wildlife</span>
+          </h1>
+          <br/>
+          <p className="text-center text-white text-lg font-light mt-6">
+            According to Nottingham University, many toxic chemicals can also adhere to the surface of plastic. If ingested, contaminated microplastics could expose organisms to high concentrations of toxins
+          </p>
+
+          <p className="text-center text-white text-lg font-light mt-6">As more microplastics fill our marine environment, and are consumed by the creatures that inhabit our waters, greater concentrations of these plastic particles are entering our food chain.</p>
+          <br/>
+          <br/>
         <br />
-        <h1 className="text-white text-center text-5xl font-semibold">
-          <span className="font-semibold">Threat to the sea community</span>
-        </h1>
-        <p className="text-right text-white text-lg font-light mt-6">
-          microplastic crystals with sizes of a grain of rice down to
-          microscopic are tiny and has been injested by wide range of creatures
-          in the marine wildlife community
-        </p>
       </div>
     </div>
   );

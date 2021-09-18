@@ -15,6 +15,7 @@ import Chat from "../components/Chat";
 import Donate from "../components/Donate";
 import AboutUs from "../components/AboutUs";
 import How from "../components/How";
+import CAD from "../components/CAD"
 
 const Home: NextPage = () => {
   return (
@@ -45,6 +46,7 @@ const Home: NextPage = () => {
           <p className="text-white text-lg">About Us</p>
         </AboutUs>
         <How />
+        <CAD></CAD>
       </Body>
     </>
   );
