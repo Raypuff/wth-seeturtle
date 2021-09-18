@@ -22,7 +22,7 @@ const Dashboard: FC = () => {
           Microplastics collected
         </h2>
         <h1 className="text-5xl font-semibold text-lightblue">
-          <CountUp start={0} end={selected.microplastic} delay={0}>
+          <CountUp start={0} end={selected.microplastic} delay={0} duration = {0.4}>
             {({ countUpRef }) => (
               <div>
                 <span ref={countUpRef} />g
@@ -35,14 +35,26 @@ const Dashboard: FC = () => {
       <div className="mt-4 pt-2 pb-6 px-4 bg-dark90 rounded-2xl">
         <h2 className="text-lg font-semibold text-white">Trash seen</h2>
         <h1 className="text-5xl font-semibold text-lightred">
-          {selected.trash} objects
+          <CountUp start={0} end={selected.trash} delay={0} duration = {0.4}>
+            {({ countUpRef }) => (
+              <div>
+                <span ref={countUpRef} /> objects
+              </div>
+            )}
+          </CountUp>
         </h1>
       </div>
 
       <div className="mt-4 pt-2 pb-6 px-4 bg-dark90 rounded-2xl">
         <h2 className="text-lg font-semibold text-white">Distance travelled</h2>
         <h1 className="text-5xl font-semibold text-lightblue">
-          {selected.distance}km
+          <CountUp start={0} end={selected.distance} delay={0} duration = {0.4}>
+            {({ countUpRef }) => (
+              <div>
+                <span ref={countUpRef} />km
+              </div>
+            )}
+          </CountUp>
         </h1>
       </div>
 
@@ -51,7 +63,13 @@ const Dashboard: FC = () => {
           Current temperature
         </h2>
         <h1 className="text-5xl font-semibold text-lightred">
-          {selected.temp}°C
+          <CountUp start={0} end={selected.temp} delay={0} duration = {0.4}>
+            {({ countUpRef }) => (
+              <div>
+                <span ref={countUpRef} />°C
+              </div>
+            )}
+          </CountUp>
         </h1>
       </div>
     </div>

@@ -5,10 +5,7 @@ import { useCollectionData } from "react-firebase-hooks/firestore";
 import { auth, store } from "../firebase"; 
 import firebase from "firebase";
 
-const Chat: FC = ({children}) => {
-
-    const [user] = useAuthState(auth);
-
+const Chat: FC = ({}) => {
     return (
         <>
             <ChatRoom/>
