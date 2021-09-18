@@ -10,6 +10,18 @@
     background-size: cover;
   }
 
+  .message {
+    @apply flex mt-3 items-center gap-3;
+  }
+
+  .sent {
+    @apply flex-row-reverse;
+  }
+
+  .received {
+    @apply flex-row;
+  }
+
   .icon {
     @apply text-white text-3xl cursor-pointer hover:text-seeturtle-300;
   }

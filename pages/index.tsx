@@ -37,6 +37,7 @@ const Home: NextPage = () => {
           </LeftGrid>
           <RightGrid>
             <TurtleFeed embedId="2I6hDqCrI9o" />
+            <Chat />
           </RightGrid>
         </GridContainer>
         <Donate />

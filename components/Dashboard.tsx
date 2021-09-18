@@ -14,7 +14,7 @@ const Dashboard: FC = () => {
 
   return (
     <div className="opacity-70">
-      <h1 className="font-semibold text-3xl text-yellow-400">
+      <h1 className="font-semibold text-3xl text-white pl-2">
         {selected.date}
       </h1>
       <div className="mt-4 pt-2 pb-6 px-4 bg-dark90 rounded-2xl">
