@@ -31,7 +31,7 @@ const AboutUs: FC = ({ children }) => {
 
             <div className="pl-10">
               <p className="text-right text-white text-lg font-light mt-6">
-                microplastic crystals with sizes of a grain of rice down to
+                Microplastic crystals with sizes of a grain of rice down to
                 microscopic are tiny and has been injested by wide range of
                 creatures in the marine wildlife community
               </p>
