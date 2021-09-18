@@ -9,9 +9,7 @@ const Donate: FC = ({ children }) => {
   const nameRef = useRef<HTMLInputElement>(null);
   const donationsRef = store.collection("donations");
   const query = donationsRef.orderBy("createdAt").limit(5);
-  const [donations] = useCollectionData(query);
-  console.log(donations);
-  
+  const [donations] = useCollectionData(query); 
 
   const submitDonation = async (e: any) => {
     e.preventDefault();
