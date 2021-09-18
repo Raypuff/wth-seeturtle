@@ -42,6 +42,7 @@ const Home: NextPage = () => {
         <AboutUs />
         <How />
         <CAD />
+        <TurtleFeed embedId="xsBHRCuH2fM" />
       </Body>
     </>
   );
