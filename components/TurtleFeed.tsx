@@ -25,12 +25,14 @@ const TurtleFeed: FC<Props> = ({ embedId, turtleFeed }) => {
           title="Turtle Live Feed"
           className="rounded-xl rounded-b-lg"
         />
-        <div className="absolute w-full h-8 items-center top-[368px] flex">
-          <BiPlay className="icon mr-2" />
-          <BsFillVolumeUpFill className="icon" />
-          <FaCog className="icon text-2xl ml-auto" />
-          <BiFullscreen className="icon ml-2" />
-        </div>
+        {turtleFeed && (
+          <div className="absolute w-full h-8 items-center top-[368px] flex">
+            <BiPlay className="icon mr-2" />
+            <BsFillVolumeUpFill className="icon" />
+            <FaCog className="icon text-2xl ml-auto" />
+            <BiFullscreen className="icon ml-2" />
+          </div>
+        )}
       </div>
     </>
   );

@@ -15,6 +15,7 @@ import Donate from "../components/Donate";
 import AboutUs from "../components/AboutUs";
 import How from "../components/How";
 import CAD from "../components/CAD";
+import VideoPitch from "../components/VideoPitch";
 
 const Home: NextPage = () => {
   return (
@@ -42,7 +43,7 @@ const Home: NextPage = () => {
         <AboutUs />
         <How />
         <CAD />
-        <TurtleFeed embedId="2I6hDqCrI9o" />
+        <VideoPitch />
       </Body>
     </>
   );
