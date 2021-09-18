@@ -50,11 +50,13 @@ const CAD: FC = ({ children }) => {
       </div>
       <br />
       <div className="flex flex-col justify-center items-center h-full">
-      <br />
-        <h1 className="text-white text-center text-4xl font-semibold">
+        <h1 className="text-white text-center text-5xl font-semibold">
           <br />
-          <span className="font-semibold">SeeTurtle components  </span>
+          <span className="font-semibold">SeeTurtle components</span>
         </h1>
+        <span className="text-center text-white text-lg font-light mt-6">
+          State-of-the-art engineering with advanced functionalities.
+        </span>
         
           <Image
             src="/blownup.png"
