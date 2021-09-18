@@ -1,4 +1,5 @@
 import { FC, useState, useRef } from "react";
+import { useCollectionData } from "react-firebase-hooks/firestore";
 import { store } from "../firebase";
 
 const Donate: FC = ({ children }) => {
@@ -6,10 +7,13 @@ const Donate: FC = ({ children }) => {
   const [nextPage, setNextPage] = useState(false);
   const nameRef = useRef<HTMLInputElement>(null);
 
+  const donationsRef = store.collection("donations");
+  const query = donationsRef.orderBy("createdAt").limit(10);
+  const [donations] = useCollectionData(query, { idField: "id" });
+  console.log(donations);
+
   const submitDonation = async (e: any) => {
     e.preventDefault();
-
-    const donationsRef = store.collection("donations");
 
     await donationsRef.add({
       displayName: nameRef?.current?.value,
@@ -98,6 +102,10 @@ const Donate: FC = ({ children }) => {
                 Next
               </button>
             </div>
+            <p className="mx-8 mt-4 font-light text-lg">
+              Disclaimer: Our MVP does not process real donations (yet) so feel
+              free to 'donate' to save the turtles!
+            </p>
           </>
         ) : (
           <div className="mx-8">
@@ -116,7 +124,6 @@ const Donate: FC = ({ children }) => {
               }`}
               onClick={(e) => {
                 if (nameRef?.current?.value) {
-                  alert(`${nameRef?.current?.value} donated ${amount}`);
                   submitDonation(e);
                   setNextPage(false);
                   setAmount(null);
@@ -133,6 +140,22 @@ const Donate: FC = ({ children }) => {
             </button>
           </div>
         )}
+      </div>
+      <h2 className="mb-4 pt-8 pb-4 text-4xl font-semibold text-center text-white">
+        Latest Donations
+      </h2>
+      <div className="grid grid-cols-2 grid-rows-5 w-auto gap-x-16 gap-y-8">
+        {donations &&
+          donations.map((donation) => {
+            return (
+              <div className=" w-56 bg-white bg-opacity-70 h-8 flex items-center font-black uppercase text-seeturtle-800 pl-2 text-lg rounded-md">
+                {donation.displayName}
+                <div className="rounded-full ml-auto bg-white w-16 h-16 mr-[-32px] flex justify-center items-center text-xl font-black text-white grad-bg">
+                  ${donation.amount}
+                </div>
+              </div>
+            );
+          })}
       </div>
     </div>
   );
