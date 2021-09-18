@@ -30,7 +30,7 @@ function SignIn() {
     <div className="flex w-full justify-center">
       <button
         onClick={signInWithGoogle}
-        className="text-seeturtle-800 text-xl my-2 py-2 px-4 rounded-xl text-center font-black uppercase bg-gray-400 hover:bg-lightblue hover:text-white"
+        className="text-seeturtle-800 text-sm my-2 py-2 px-4 rounded-xl text-center font-black uppercase bg-gray-400 hover:grad-bg hover:text-white"
       >
         Sign in to chat
       </button>
@@ -52,13 +52,14 @@ function SendMessage() {
     e.preventDefault();
 
     const { uid, photoURL } = auth.currentUser;
-
-    await messagesRef.add({
-      text: formValue,
-      createdAt: firebase.firestore.FieldValue.serverTimestamp(),
-      uid: uid,
-      photoURL: photoURL,
-    });
+    if (formValue !== "") {
+      await messagesRef.add({
+        text: formValue,
+        createdAt: firebase.firestore.FieldValue.serverTimestamp(),
+        uid: uid,
+        photoURL: photoURL,
+      });
+    }
 
     setFormValue("");
   };
@@ -79,7 +80,7 @@ function SendMessage() {
               <div className="flex justify-end">
                 <button
                   type="submit"
-                  className="bg-white mt-2 px-2 py-1 font-black text-sm rounded-md hover:bg-lightred hover:text-white"
+                  className="bg-white mt-2 px-2 py-1 uppercase font-black text-sm rounded-md hover:grad-bg hover:text-white"
                 >
                   Send
                 </button>

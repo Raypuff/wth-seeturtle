@@ -10,6 +10,10 @@
     background-size: cover;
   }
 
+  .grad-bg {
+    background: linear-gradient(98.89deg, #88074c -1.96%, #001d66 73.84%);
+  }
+
   .message {
     @apply flex mt-3 items-center gap-3;
   }

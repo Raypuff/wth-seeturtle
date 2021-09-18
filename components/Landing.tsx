@@ -15,7 +15,7 @@ const Landing: FC = ({ children }) => {
           <p className="text-left text-white text-lg font-light mt-6">
             Our turtles eat microplastics so that real ones don't have to
           </p>
-          <button className="text-seeturtle-800 text-2xl bg-white max-w-max font-semibold flex items-end px-4 py-2 rounded-xl mt-6 hover:bg-lightblue hover:text-white">
+          <button className="text-seeturtle-800 text-2xl bg-gray-200 hover:grad-bg max-w-max font-black uppercase flex items-end px-5 py-3 rounded-xl mt-6 hover:bg-lightblue hover:text-white">
             Watch live feed
             <BiVideo className="text-3xl ml-2" />
           </button>

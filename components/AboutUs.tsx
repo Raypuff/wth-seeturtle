@@ -1,13 +1,15 @@
 import { FC } from "react";
 import Image from "next/image";
-import Challenge from "../components/Challenge";
 
 const AboutUs: FC = ({ children }) => {
   return (
     <div className="mx-8" id="aboutus">
-      <div>
-        <Challenge></Challenge>
-      </div>
+      <h1 className="text-6xl py-8 font-semibold text-center text-white">
+        Our Challenge
+      </h1>
+      <p className="text-center text-white text-lg font-light mt-4 mb-16">
+        Waste Management: Hidden Microplastic Crystals
+      </p>
 
       <div>
         <div className="grid grid-cols-2 h-4/5">
@@ -50,20 +52,25 @@ const AboutUs: FC = ({ children }) => {
         <br />
       </div>
       <div>
+        <br />
+        <br />
+        <h1 className="text-white text-center text-5xl font-semibold">
+          <span className="font-semibold">Threat to the ocean wildlife</span>
+        </h1>
+        <br />
+        <p className="text-center text-white text-lg font-light mt-6">
+          According to Nottingham University, many toxic chemicals can also
+          adhere to the surface of plastic. If ingested, contaminated
+          microplastics could expose organisms to high concentrations of toxins
+        </p>
 
-        <br/>
-        <br/>
-      <h1 className="text-white text-center text-5xl font-semibold">
-            <span className="font-semibold">Threat to the ocean wildlife</span>
-          </h1>
-          <br/>
-          <p className="text-center text-white text-lg font-light mt-6">
-            According to Nottingham University, many toxic chemicals can also adhere to the surface of plastic. If ingested, contaminated microplastics could expose organisms to high concentrations of toxins
-          </p>
-
-          <p className="text-center text-white text-lg font-light mt-6">As more microplastics fill our marine environment, and are consumed by the creatures that inhabit our waters, greater concentrations of these plastic particles are entering our food chain.</p>
-          <br/>
-          <br/>
+        <p className="text-center text-white text-lg font-light mt-6">
+          As more microplastics fill our marine environment, and are consumed by
+          the creatures that inhabit our waters, greater concentrations of these
+          plastic particles are entering our food chain.
+        </p>
+        <br />
+        <br />
         <br />
       </div>
     </div>
