@@ -1,6 +1,4 @@
 import type { NextPage } from "next";
-import Head from "next/head";
-import Image from "next/image";
 // Components
 import Body from "../components/Body";
 import LeftNavbar from "../components/LeftNavbar";
@@ -20,14 +18,6 @@ import VideoPitch from "../components/VideoPitch";
 const Home: NextPage = () => {
   return (
     <>
-      <Head>
-        <title>SeeTurtle - What The Hack</title>
-        <meta
-          name="SeeTurtle - Cleaning up microplastics"
-          content="SeeTurtle is a robotic turtle which travels the ocean, filtering microplastics as it swims, transmitting a livestream of its dives to raise awareness of the amount of plastics removed."
-        />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
       <Body>
         <LeftNavbar />
         <Navbar />
