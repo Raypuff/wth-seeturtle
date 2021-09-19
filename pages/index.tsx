@@ -1,4 +1,6 @@
 import type { NextPage } from "next";
+import Head from "next/head";
+import Image from "next/image";
 // Components
 import Body from "../components/Body";
 import LeftNavbar from "../components/LeftNavbar";
@@ -19,6 +21,14 @@ import Linkedin from "../components/Linkedin";
 const Home: NextPage = () => {
   return (
     <>
+      <Head>
+        <title>SeeTurtle - What The Hack</title>
+        <meta
+          name="description"
+          content="SeeTurtle cleaning up microplastics"
+        />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
       <Body>
         <LeftNavbar />
         <Navbar />
