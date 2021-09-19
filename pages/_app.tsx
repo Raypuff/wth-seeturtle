@@ -11,7 +11,7 @@ function MyApp({ Component, pageProps }: AppProps) {
           name="SeeTurtle - Cleaning up microplastics"
           content="SeeTurtle is a robotic turtle which travels the ocean, filtering microplastics as it swims, transmitting a livestream of its dives to raise awareness of the amount of plastics removed."
         />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="favicon.ico" />
       </Head>
       <Component {...pageProps} />
     </>
