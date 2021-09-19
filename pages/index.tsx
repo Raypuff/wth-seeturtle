@@ -23,8 +23,8 @@ const Home: NextPage = () => {
       <Head>
         <title>SeeTurtle - What The Hack</title>
         <meta
-          name="description"
-          content="SeeTurtle cleaning up microplastics"
+          name="SeeTurtle - Cleaning up microplastics"
+          content="SeeTurtle is a robotic turtle which travels the ocean, filtering microplastics as it swims, transmitting a livestream of its dives to raise awareness of the amount of plastics removed."
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
