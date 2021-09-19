@@ -85,44 +85,6 @@ const CAD: FC = ({ children }) => {
         </span>
         <br />
       </div>
-
-      <div className="grid grid-rows-2 gap-5">
-        <div className="grid grid-cols-3 px-10 gap-5">
-          <div className="flex justify-center items-center">
-            <a className="cursor-pointer">
-              <div className="hover:scale-105 transform transition-all duration-500">
-                <img
-                  className="h-30 rounded-lg"
-                  src="https://cdn.pixabay.com/photo/2020/07/21/16/24/landscape-5426755_960_720.jpg"
-                  alt="image"
-                />
-              </div>
-            </a>
-          </div>
-          <div className="flex justify-center items-center">
-            <a className="cursor-pointer">
-              <div className="hover:scale-105 transform transition-all duration-500">
-                <img
-                  className="h-30 rounded-lg"
-                  src="https://cdn.pixabay.com/photo/2020/07/21/16/24/landscape-5426755_960_720.jpg"
-                  alt="image"
-                />
-              </div>
-            </a>
-          </div>
-          <div className="flex justify-center items-center">
-            <a className="cursor-pointer">
-              <div className="hover:scale-105 transform transition-all duration-500">
-                <img
-                  className="h-30 rounded-lg"
-                  src="https://cdn.pixabay.com/photo/2020/07/21/16/24/landscape-5426755_960_720.jpg"
-                  alt="image"
-                />
-              </div>
-            </a>
-          </div>
-        </div>
-      </div>
     </div>
   );
 };

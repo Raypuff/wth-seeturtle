@@ -16,6 +16,7 @@ import AboutUs from "../components/AboutUs";
 import How from "../components/How";
 import CAD from "../components/CAD";
 import VideoPitch from "../components/VideoPitch";
+import Linkedin from "../components/Linkedin";
 
 const Home: NextPage = () => {
   return (
@@ -44,6 +45,7 @@ const Home: NextPage = () => {
         <How />
         <CAD />
         <VideoPitch />
+        <Linkedin/>
       </Body>
     </>
   );
