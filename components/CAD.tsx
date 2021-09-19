@@ -83,7 +83,16 @@ const CAD: FC = ({ children }) => {
           You can see our SeeTurtles in action and track how much plastic waste
           has been removed.
         </span>
-        <br />
+        <br />{" "}
+        <div className="video-border-jess w-4/5 mx-auto mb-16">
+          <Image
+            src="/map.png"
+            alt="Map"
+            layout="responsive"
+            width={865}
+            height={579}
+          />
+        </div>
       </div>
     </div>
   );

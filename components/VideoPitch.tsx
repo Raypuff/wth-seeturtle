@@ -4,7 +4,7 @@ import TurtleFeed from "./TurtleFeed";
 const VideoPitch: FC = () => {
   return (
     <div id="videopitch" className="flex flex-col items-center">
-      <h1 className="py-4 text-6xl font-semibold text-center text-white">
+      <h1 className="pb-4 pt-8 text-6xl font-semibold text-center text-white">
         Video Pitch
       </h1>
       <span className="text-center text-white text-lg font-light mb-4">

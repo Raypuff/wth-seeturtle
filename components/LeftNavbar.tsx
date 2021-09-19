@@ -7,7 +7,11 @@ import {
   BiQuestionMark,
   BiInfoCircle,
 } from "react-icons/bi";
-import { AiOutlineGithub, AiOutlineYoutube } from "react-icons/ai";
+import {
+  AiOutlineGithub,
+  AiOutlineYoutube,
+  AiOutlineLinkedin,
+} from "react-icons/ai";
 
 const Navbar: FC = () => {
   return (
@@ -42,6 +46,9 @@ const Navbar: FC = () => {
             </a>
             <a href="#videopitch">
               <AiOutlineYoutube className="icon" />
+            </a>
+            <a href="#linkedin">
+              <AiOutlineLinkedin className="icon" />
             </a>
           </div>
           <a
